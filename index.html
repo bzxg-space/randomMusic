@@ -1,0 +1,57 @@
+<!--
+时间：2020/2/16
+作者：搬砖小哥
+github：https://github.com/bzxg-space
+接口来自网络：https://api.uomg.com/doc-comments.163.html
+-->
+<!-- 封面picurl、热评content、歌曲url、名称name - artistsname -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>随机音乐</title>
+		<meta name="author" content="搬砖小哥" />
+		<!--解决http警报-->
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<h3>
+			随机音乐
+		</h3>
+		<article>
+			<header>
+				<h3 id="name"></h3>
+				<hr noshade="noshade" ; />
+			</header>
+			<section>
+				<img id="picurl" />
+				<audio id="url" controls loop></audio>
+				<p id="content"></p>
+				<p id="nickname"></p>
+			</section>
+		</article>
+		<script>
+			var xhr = new XMLHttpRequest();
+			xhr.open('get', 'https://api.uomg.com/api/comments.163?format=json');
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					var result = JSON.parse(xhr.responseText);
+					var name = document.getElementById('name');
+					var url = document.getElementById('url');
+					var content = document.getElementById('content');
+					var nickname = document.getElementById('nickname');
+					var picurl = document.getElementById('picurl');
+					picurl.src = result.data.picurl;
+					content.innerHTML = result.data.content;
+					nickname.innerText= "来自@" + result.data.nickname + "在「" + result.data.name +"」歌曲下方的评论";
+					url.src = result.data.url;
+					name.innerText = result.data.name + " - " + result.data.artistsname;
+				}
+			};
+			xhr.send();
+		</script>
+		<button onclick="location.reload();">再来一首～</button>
+		<footer>接口来自<a href="https://api.uomg.com/doc-comments.163.html" target="_blank">网络</a></footer>
+	</body>
+</html>

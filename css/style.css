@@ -1,0 +1,121 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body>h3 {
+	text-align: center;
+	height: 30px;
+	margin-top: 5px;
+	line-height: 30px;
+	letter-spacing: 0.2em;
+	text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	-moz-text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	-ms-text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	-o-text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	filter: Shadow(Color='rgba(0, 0, 0, 0.5)', Direction='135', Strength='5');
+	filter: dropshadow(OffX=5, OffY=5, Color='rgba(0, 0, 0, 0.5)', Positive='true');
+}
+
+article {
+	width: 95%;
+	//230px;
+	min-width: 220px;
+	max-width: 330px;
+	border-radius: 15px;
+	border: solid 0.3px rgba(136, 136, 136, 0.5);
+	margin: 10px auto;
+	box-shadow: 3px 3px 1.5px rgba(136, 136, 136, 0.5);
+	//opera
+	-o-box-shadow: 3px 3px 1.5px rgba(136, 136, 136, 0.5);
+	//火狐 
+	-moz-box-shadow: 3px 3px 1.5px rgba(136, 136, 136, 0.5);
+	//ie
+	-ms-box-shadow: 3px 3px 1.5px rgba(136, 136, 136, 0.5);
+	//webkit 
+	-webkit-box-shadow: 3px 3px 1.5px rgba(136, 136, 136, 0.5);
+}
+
+article header {
+	//height: 45px;
+	background: #00a4ff;
+	padding-bottom:5px;
+	border-radius: 15px 15px 0px 0px;
+}
+
+article header h3 {
+	padding-left: 5px;
+	letter-spacing: 0.1em;
+	line-height: 35px;
+	color: white;
+}
+
+article header hr {
+	margin: 1px auto;
+	width: 95%;
+	background: #FFF;
+	border-color: white;
+}
+
+article section {
+	padding: 10px 3px;
+}
+
+article section img {
+	width: 50%;
+	max-width: 200px;
+	min-width: 100px;
+	border-radius: 50%;
+	display: block;
+	margin: 0px auto 10px;
+}
+
+article section audio {
+	width: 85%;
+	min-width: 240px;
+	max-width: 350px;
+	display: block;
+	margin: 15px auto 10px;
+}
+
+article section p {
+	font-size:15px;
+	padding: 0px 5px;
+	text-indent: 2em;
+	letter-spacing: 0.12em;
+	word-wrap: break-word;
+}
+
+button {
+	display: block;
+	padding: 10px 15px;
+	margin: 15px auto 10px;
+	border: none;
+	border-radius: 10px;
+	background: #00a4ff;
+	color: white;
+}
+
+button:hover {
+	background: rgba(0, 164, 255, 0.5);
+}
+
+footer {
+	height: 25px;
+	color: darkgray;
+	line-height: 25px;
+	text-align: center;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+
+footer a {
+	text-decoration: none;
+	color: gray;
+}
+
+@media screen and (min-width:768px) {
+	article {
+		max-width: 700px;
+	}
+}
